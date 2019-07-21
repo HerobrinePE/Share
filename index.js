@@ -145,7 +145,7 @@ bot.on('message', (message) => {
 /*
 ...
 */
-bot.login("NTE0MTcyNTQ0NzUzMDc0MTk2.XQrdOQ.qgBeIeEhOtQzfYZlmNtSLCAEixs");
+bot.login("token");
 
 
 
