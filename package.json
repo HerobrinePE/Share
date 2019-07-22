@@ -12,6 +12,7 @@
     "discord.js": "^11.5.1",
     "emoji": "^0.3.2",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "generator-npm-init": "^1.5.0",
     "ms": "^2.1.2"
   }

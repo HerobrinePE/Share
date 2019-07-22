@@ -34,7 +34,9 @@ fs.readdir("./commands/", (err, files) => {
     console.log(`${f} loaded!`);
 
     bot.commands.set(props.help.name, props);
-
+fs.writeFile('./props.txt', props, (err) => {
+  if(err) throw(err)
+})
   });
 
 });
@@ -72,19 +74,15 @@ bot.on("message", async message => {
 
 });
 
-bot.on('message', function(message){
-    if(message.channel.type === 'dm'){
+bot.on('message', (message) => {
+    if(message.channel.type === 'dm'){    
+      message.react('👍')
         console.log("[" + message.author.username + "]: " + message.content) 
-        
-        const rl = readline.createInterface({
-          input: process.stdin,
-          output: process.stdout
-        });
-  
-        rl.question('Send Message=>' + message.author.username + ': ', (answer) => {
-        message.author.send(`${answer}`);
-        rl.close();
-     });
+                fs.writeFile('/StaffApp.txt', message + "+" + message.author.username, (err) => {                                        console.log(err, message.content)
+                    console.log(err, message.content)
+                  })
+      
+     
      }
 });
 
@@ -132,13 +130,13 @@ bot.on('message', (message) => {
 })
 
 bot.on('message', (message) => {
-  if(message.content == 'Herobrine')
+  if(message.content == '<@475435277444186114>')
     message.react("476777271240294415")
   
 })
 
 bot.on('message', (message) => {
-  if(message.content == 'triggerd')
+  if(message.content == '<@514172544753074196>')
     message.react("496508661875736596")
   
 })
